@@ -5,8 +5,23 @@ where n1,e1 are the number of nodes and edges in the bigger graph (G'), n2,e2 ar
 
 python generate.py n1 e1 n2 e2 > filename
 
+./compile.sh
+
+./run1.sh graph
+
+./minisat graph.satinput graph.satoutput
+
+./run2.sh graph
+
+
 To check whether a mapping (in the given output format) is valid, you can run
 
 python check.py test.input test.output
 
 where test.input is in the described input format, and test.output is in the described output format. 
+
+check.py has a minor bug that it does not check if all nodes of smaller graph are mapped, it only checks if given mappings are correct.
+
+check.py also gives error in case of Unsat Output
+
+Also the isolated nodes should not be mapped according to check.py and as clarified in further assignment discussions.
